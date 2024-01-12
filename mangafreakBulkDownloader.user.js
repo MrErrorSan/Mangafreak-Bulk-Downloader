@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MangaFreak Bulk Downloader
 // @namespace    http://tampermonkey.net/
-// @version      0.6.0
+// @version      1.0.0
 // @description  Bulk Download by filters on mangafreak.net
 // @author       Mr.Error
 // @match        *://*mangafreak.net/Manga/*
@@ -39,7 +39,7 @@
     const filterUI = document.createElement('div');
     filterUI.innerHTML = `
         <style>
-            select, label {
+            select, label,button {
                 font-size: 18px;
                 padding-top: 5px;
                 padding-bottom: 5px;
@@ -59,7 +59,7 @@
                 border: none;
                 border-radius: 5px;
             }
-            #filterButton, #downloadButton {
+            #filteredTable, #filterButton {
                 display: none;
             }
         </style>
@@ -69,6 +69,7 @@
         <select id="toSelect">${generateOptions(allLinks)}</select>
         <button id="filterButton">Filter</button>
         <button id="downloadButton" onclick="downloadLinks()" disabled>Download</button>
+        <button onclick="copyToClipboard()">Copy Links</button>
         <table id="filteredTable"></table>
     `;
 
@@ -85,12 +86,29 @@
         const filteredLinks = allLinks.slice(fromIndex - 1, toIndex);
 
         filteredLinks.forEach(link => {
-            const downloadLink = document.createElement('a');
-            downloadLink.href = link;
-            downloadLink.download = '';
-            downloadLink.click();
+            const tempLink = document.createElement('a');
+            tempLink.href = link;
+            tempLink.target = '_blank';
+            tempLink.style.display = 'none';
+            document.body.appendChild(tempLink);
+
+            tempLink.click();
+
+            document.body.removeChild(tempLink);
         });
     }
+
+    window.copyToClipboard = function () {
+        const filteredTable = document.getElementById("filteredTable");
+        const links = Array.from(filteredTable.getElementsByTagName("td")).map(cell => cell.innerText);
+        const textToCopy = links.join('\n');
+
+        navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => alert("Copied to clipboard"))
+            .catch((e) => alert(e.message));
+    };
+
 
     function generateOptions(links) {
         return links.map((link, index) => `<option value="${index + 1}">${index + 1}</option>`).join('');
