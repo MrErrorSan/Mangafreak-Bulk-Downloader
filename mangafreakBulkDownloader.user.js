@@ -1,11 +1,15 @@
 // ==UserScript==
 // @name         MangaFreak Bulk Downloader
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Bulk Download by filters on mangafreak.net
 // @author       Mr.Error
 // @match        *://*mangafreak.net/Manga/*
+// @match        https://w15.mangafreak.net/*
 // @include      *://*mangafreak.net/Manga/*
+// @icon         https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://w15.mangafreak.net&size=64
+// @updateURL    https://github.com/MrErrorSan/Mangafreak-Bulk-Downloader/raw/main/mangafreakBulkDownloader.user.js
+// @downloadURL  https://github.com/MrErrorSan/Mangafreak-Bulk-Downloader/raw/main/mangafreakBulkDownloader.user.js
 // @grant        none
 // ==/UserScript==
 
