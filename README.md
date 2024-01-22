@@ -31,3 +31,17 @@ This user script, named **MangaFreak Bulk Downloader**, is a tool developed by [
 
 ## License
 This script is licensed under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for more details. Feel free to contribute or report issues on the [GitHub repository](https://github.com/MrErrorSan/Mangafreak-Bulk-Downloader/issues).
+
+## Recommended Scripts
+
+1. **Youtube Ad-blocker Reminder Remover**:
+   [Click Here and Press Install](https://raw.githubusercontent.com/TheRealJoelmatic/RemoveAdblockThing/main/Youtube-Ad-blocker-Reminder-Remover.user.js).
+
+2. **Remove YouTube Shorts**:
+   [Click Here and Press Install](https://raw.githubusercontent.com/hallzy/remove-youtube-shorts/master/remove-youtube-shorts.user.js).
+
+3. **Manga Online Viewer**:
+   [Click Here and Press Install](https://raw.githubusercontent.com/TagoDR/MangaOnlineViewer/master/dist/Manga_OnlineViewer.user.js).
+
+4. **KeepChatGPT**:
+   [Click Here and Press Install](https://raw.githubusercontent.com/xcanwin/KeepChatGPT/main/KeepChatGPT.user.js).
